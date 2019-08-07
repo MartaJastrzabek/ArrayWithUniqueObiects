@@ -44,21 +44,6 @@ public class Person {
         return firstName.equals(person.firstName);
     }
 
-    public boolean isUnique(Person[] array, Person temp){
-        for (Person p : array){
-            if(temp.equals(p)){
-                return true;
-            }
-        }
-        return false;
-    }
 
-    public static Person addPerson(Scanner in){
-        System.out.println("Podaj imię i wiek: ");
-        String firstName = in.nextLine();
-        int age = in.nextInt();
-        in.nextLine();
-        return new Person(firstName, age);
-    }
 
 }

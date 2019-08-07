@@ -8,8 +8,8 @@ public class PersonTest {
         int count = 0;
 
         do{
-            Person temp = Person.addPerson(in);
-            if(!temp.isUnique(people, temp)){
+            Person temp = PersonTest.addPerson(in);
+            if(!PersonTest.isUnique(people, temp)){
                 people[count] = temp;
                 count++;
             }
@@ -18,5 +18,22 @@ public class PersonTest {
         System.out.println(Arrays.toString(people));
 
         in.close();
+    }
+
+    public static boolean isUnique(Person[] array, Person temp){
+        for (Person p : array){
+            if(temp.equals(p)){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static Person addPerson(Scanner in){
+        System.out.println("Podaj imię i wiek: ");
+        String firstName = in.nextLine();
+        int age = in.nextInt();
+        in.nextLine();
+        return new Person(firstName, age);
     }
 }
