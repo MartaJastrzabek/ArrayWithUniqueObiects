@@ -7,13 +7,13 @@ public class PersonTest {
         Person[] people = new Person[3];
         int count = 0;
 
-        do{
+        while (count < people.length){
             Person temp = PersonTest.addPerson(in);
             if(!PersonTest.isUnique(people, temp)){
                 people[count] = temp;
                 count++;
             }
-        } while (people[2]==null);
+        }
 
         System.out.println(Arrays.toString(people));
 
