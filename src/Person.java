@@ -44,6 +44,10 @@ public class Person {
         return firstName.equals(person.firstName);
     }
 
-
-
+    @Override
+    public int hashCode() {
+        int result = firstName.hashCode();
+        result = 31 * result + age;
+        return result;
+    }
 }
